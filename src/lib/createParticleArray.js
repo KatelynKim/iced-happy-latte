@@ -1,4 +1,5 @@
 import Cloudy from '../Particles/Cloudy'
+import Fog from '../Particles/Fog'
 import Rain from '../Particles/Rain'
 import Snow from '../Particles/Snow'
 import Weathers from './constants/weathers'
@@ -14,6 +15,9 @@ export default function createParticleArray(numberOfParticles, context, weather)
       break
     case Weathers.CLOUDY:
       constructor = Cloudy
+      break
+    case Weathers.FOG:
+      constructor = Fog
       break
     default:
       break
