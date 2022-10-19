@@ -30,8 +30,11 @@ function Canvas({ temperature, mainWeather }) {
       case Weathers.CLOUDY:
         setBackgroundColor('#E4E4E2')
         break
+      case Weathers.FOG:
+        setBackgroundColor('#d8e2dc')
+        break
       default:
-        setBackgroundColor('yellow')
+        setBackgroundColor('#FAEDCD')
         break
     }
 

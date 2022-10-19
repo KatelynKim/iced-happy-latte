@@ -18,6 +18,10 @@ function createResultButtonStyle(mainWeather) {
       background = '#D8A899'
       hoverBackground = '#E06741'
       break
+    case Weathers.FOG:
+      background = '#5c677d'
+      hoverBackground = '#33415c'
+      break
     default:
       break
   }
