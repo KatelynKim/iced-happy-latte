@@ -1,20 +1,29 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 import Canvas from './components/Canvas'
-import useWeatherInfo from './lib/useWeatherInfo'
+import fetchWeatherData from './lib/useWeatherInfo'
+import MoodForm from './components/MoodForm'
+import createResultButtonStyle from './lib/createResultButtonStyle'
 
 function App() {
   const [weather, setWeather] = useState()
-
   useEffect(() => {
     async function getWeatherInfo() {
-      await useWeatherInfo().then((res) => { setWeather(res.data) })
+      await fetchWeatherData().then((res) => { setWeather(res.data) })
     }
     getWeatherInfo()
   }, [])
+
   const temperature = weather?.main?.temp
-  const mainWeather = weather?.weather[0].main
-  return (temperature && mainWeather && <Canvas temperature={temperature} mainWeather={mainWeather} />)
+  const mainWeather = 'Clear'
+  const weatherTheme = createResultButtonStyle(mainWeather)
+
+  return (
+    <>
+      { temperature && mainWeather && <Canvas temperature={temperature} mainWeather={mainWeather} /> }
+      <MoodForm weatherTheme={weatherTheme} mainWeather={mainWeather} />
+    </>
+
+  )
 }
 
 export default App

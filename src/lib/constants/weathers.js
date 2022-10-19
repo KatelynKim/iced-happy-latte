@@ -1,7 +1,7 @@
 const Weathers = {
   SNOW: 'Snow',
   RAIN: 'Rain',
-  SUNNY: 'Clear',
+  CLEAR: 'Clear',
   CLOUDY: 'Clouds',
   THUNDERSTORM: 'Thunderstorm',
   SQUALL: 'Squall',

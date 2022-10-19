@@ -24,7 +24,7 @@ function Canvas({ temperature, mainWeather }) {
       case Weathers.SNOW:
         setBackgroundColor('#D0D1E1')
         break
-      case Weathers.SUNNY:
+      case Weathers.CLEAR:
         setBackgroundColor('#F1EAE6')
         break
       case Weathers.CLOUDY:
@@ -39,14 +39,14 @@ function Canvas({ temperature, mainWeather }) {
 
     let particleArray
     let rayArray
-    if (mainWeather !== Weathers.SUNNY) {
+    if (mainWeather !== Weathers.CLEAR) {
       particleArray = createParticleArray(numberOfParticles, context, mainWeather)
     } else {
       rayArray = createRayArray(context)
     }
 
     function animate() {
-      if (mainWeather === Weathers.SUNNY) {
+      if (mainWeather === Weathers.CLEAR) {
         drawSunCore(context)
         for (const ray of rayArray) {
           ray.update()
