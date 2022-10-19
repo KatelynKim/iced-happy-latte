@@ -14,7 +14,7 @@ function App() {
   }, [])
 
   const temperature = weather?.main?.temp
-  const mainWeather = 'Clear'
+  const mainWeather = weather?.weather[0].main
   const weatherTheme = createResultButtonStyle(mainWeather)
 
   return (
