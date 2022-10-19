@@ -1,11 +1,13 @@
+import Ash from '../Particles/Ash'
 import Cloudy from '../Particles/Cloudy'
 import Fog from '../Particles/Fog'
 import Rain from '../Particles/Rain'
 import Snow from '../Particles/Snow'
 import Weathers from './constants/weathers'
 
-export default function createParticleArray(numberOfParticles, context, weather) {
+export default function createParticleArray(context, weather) {
   let constructor
+  let numberOfParticles = 10
   switch (weather) {
     case Weathers.RAIN:
       constructor = Rain
@@ -18,6 +20,10 @@ export default function createParticleArray(numberOfParticles, context, weather)
       break
     case Weathers.FOG:
       constructor = Fog
+      break
+    case Weathers.ASH:
+      numberOfParticles = 200
+      constructor = Ash
       break
     default:
       break

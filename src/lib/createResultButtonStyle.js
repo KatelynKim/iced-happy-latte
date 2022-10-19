@@ -22,6 +22,10 @@ function createResultButtonStyle(mainWeather) {
       background = '#5c677d'
       hoverBackground = '#33415c'
       break
+    case Weathers.ASH:
+      background = '#6f5e53'
+      hoverBackground = '#593d3b'
+      break
     default:
       break
   }
