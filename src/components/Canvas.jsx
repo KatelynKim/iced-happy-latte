@@ -3,11 +3,11 @@ import createParticleArray from '../lib/createParticleArray'
 import Weathers from '../lib/constants/weathers'
 import createRayArray from '../lib/createRayArray'
 import drawSunCore from '../lib/drawSunCore'
+import updateBackgroundColor from '../lib/updateBackgroundColor'
 
 function Canvas({ temperature, mainWeather }) {
   const canvasRef = useRef(null)
   const [backgroundColor, setBackgroundColor] = useState('#FFFFFF')
-  const numberOfParticles = 10
   const canvasWidth = window.innerWidth
   const canvasHeight = window.innerHeight
 
@@ -17,33 +17,12 @@ function Canvas({ temperature, mainWeather }) {
     canvas.height = canvasHeight
     const context = canvas.getContext('2d')
 
-    switch (mainWeather) {
-      case Weathers.RAIN:
-        setBackgroundColor('#D5E7F6')
-        break
-      case Weathers.SNOW:
-        setBackgroundColor('#D0D1E1')
-        break
-      case Weathers.CLEAR:
-        setBackgroundColor('#F1EAE6')
-        break
-      case Weathers.CLOUDY:
-        setBackgroundColor('#E4E4E2')
-        break
-      case Weathers.FOG:
-        setBackgroundColor('#d8e2dc')
-        break
-      default:
-        setBackgroundColor('#FAEDCD')
-        break
-    }
-
-    document.body.style.backgroundColor = backgroundColor
+    updateBackgroundColor(mainWeather, backgroundColor, setBackgroundColor)
 
     let particleArray
     let rayArray
     if (mainWeather !== Weathers.CLEAR) {
-      particleArray = createParticleArray(numberOfParticles, context, mainWeather)
+      particleArray = createParticleArray(context, mainWeather)
     } else {
       rayArray = createRayArray(context)
     }
