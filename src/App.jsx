@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Canvas from './components/Canvas'
 import fetchWeatherData from './lib/useWeatherInfo'
 import MoodForm from './components/MoodForm'
-import createResultButtonStyle from './lib/createResultButtonStyle'
+import createColorPalette from './lib/createResultButtonStyle'
 
 function App() {
   const [weather, setWeather] = useState()
@@ -14,9 +14,9 @@ function App() {
   }, [])
 
   const temperature = weather?.main?.temp
-  const mainWeather = 'Ash'
+  const mainWeather = 'Smoke'
   // 'weather?.weather[0].main'
-  const weatherTheme = createResultButtonStyle(mainWeather)
+  const weatherTheme = createColorPalette(mainWeather)
 
   return (
     <>
