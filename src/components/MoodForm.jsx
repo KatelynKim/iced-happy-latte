@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Grid from '@mui/material/Grid'
 import { styled } from '@mui/material/styles'
 import Button from '@mui/material/Button'
@@ -20,7 +20,9 @@ export default function MoodForm({
   mainWeather,
   selectedMoodIDs,
   setSelectedMoodIDs,
-  temperature
+  temperature,
+  setCoffee,
+  setIsResultVisible
 }) {
   const {
     color,
@@ -64,7 +66,9 @@ export default function MoodForm({
     }
   }
   const submitResult = () => {
-    recommendCoffee(selectedMoodIDs, temperature)
+    const coffee = recommendCoffee(selectedMoodIDs, temperature)
+    setCoffee(coffee)
+    setIsResultVisible(true)
   }
   return (
     <div>
