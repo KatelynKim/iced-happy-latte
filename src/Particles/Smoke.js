@@ -1,4 +1,4 @@
-import generateRandIntInRange from "../lib/generateRandIntInRange"
+import generateRandIntInRange from '../lib/generateRandIntInRange'
 
 class Smoke {
   constructor(ctx) {

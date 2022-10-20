@@ -17,6 +17,7 @@ export default function createParticleArray(context, weather) {
       constructor = Snow
       break
     case Weathers.CLOUDY:
+      numberOfParticles = 7
       constructor = Cloudy
       break
     case Weathers.FOG:
