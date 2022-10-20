@@ -2,6 +2,7 @@ import Ash from '../Particles/Ash'
 import Cloudy from '../Particles/Cloudy'
 import Fog from '../Particles/Fog'
 import Rain from '../Particles/Rain'
+import Smoke from '../Particles/Smoke'
 import Snow from '../Particles/Snow'
 import Weathers from './constants/weathers'
 
@@ -24,6 +25,10 @@ export default function createParticleArray(context, weather) {
     case Weathers.ASH:
       numberOfParticles = 200
       constructor = Ash
+      break
+    case Weathers.SMOKE:
+      numberOfParticles = 7
+      constructor = Smoke
       break
     default:
       break

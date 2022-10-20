@@ -1,6 +1,6 @@
 import Weathers from './constants/weathers'
 
-function createResultButtonStyle(mainWeather) {
+function createColorPalette(mainWeather) {
   let background
   const color = '#FFFFFF'
   const hoverColor = '#FFFFFF'
@@ -26,6 +26,10 @@ function createResultButtonStyle(mainWeather) {
       background = '#6f5e53'
       hoverBackground = '#593d3b'
       break
+    case Weathers.SMOKE:
+      background = '#7f9183'
+      hoverBackground = '#586f6b'
+      break
     default:
       break
   }
@@ -41,4 +45,4 @@ function createResultButtonStyle(mainWeather) {
   return weatherTheme
 }
 
-export default createResultButtonStyle
+export default createColorPalette

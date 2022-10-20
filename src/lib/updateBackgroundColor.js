@@ -20,6 +20,9 @@ function updateBackgroundColor(mainWeather, backgroundColor, setBackgroundColor)
     case Weathers.ASH:
       setBackgroundColor('#ab947e')
       break
+    case Weathers.SMOKE:
+      setBackgroundColor('#b8b8aa')
+      break
     default:
       setBackgroundColor('#FAEDCD')
       break
