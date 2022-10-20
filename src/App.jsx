@@ -14,8 +14,7 @@ function App() {
   }, [])
 
   const temperature = weather?.main?.temp
-  const mainWeather = 'Smoke'
-  // 'weather?.weather[0].main'
+  const mainWeather = weather?.weather[0].main
   const weatherTheme = createColorPalette(mainWeather)
 
   return (
