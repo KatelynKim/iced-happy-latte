@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Grid from '@mui/material/Grid'
 import { styled } from '@mui/material/styles'
 import Button from '@mui/material/Button'
@@ -7,6 +7,7 @@ import MoodButton from './MoodButton'
 import WeatherResultGridItem from './WeatherResultGridItem'
 import CustomGrid from './GridContainer'
 import InstructionGridItem from './InstructionGridItem'
+import recommendCoffee from '../lib/recommendCoffee'
 
 const ResultGridItem = styled(Grid)({
   textAlign: 'center'
@@ -14,7 +15,13 @@ const ResultGridItem = styled(Grid)({
 
 const ResultButton = styled(Button)(({ resultButtonStyle }) => resultButtonStyle)
 
-export default function MoodForm({ weatherTheme, mainWeather }) {
+export default function MoodForm({
+  weatherTheme,
+  mainWeather,
+  selectedMoodIDs,
+  setSelectedMoodIDs,
+  temperature
+}) {
   const {
     color,
     background,
@@ -46,9 +53,19 @@ export default function MoodForm({ weatherTheme, mainWeather }) {
     '&:hover': {
       backgroundColor: hoverBackground,
       color: hoverColor
+    },
+    '&.Mui-selected': {
+      color: 'white',
+      backgroundColor: hoverBackground
+    },
+    '&.Mui-selected:hover': {
+      color: 'white',
+      backgroundColor: hoverBackground
     }
   }
-
+  const submitResult = () => {
+    recommendCoffee(selectedMoodIDs, temperature)
+  }
   return (
     <div>
       {mainWeather && (
@@ -63,11 +80,11 @@ export default function MoodForm({ weatherTheme, mainWeather }) {
           </InstructionGridItem>
           {moods.map((moodData) => (
             <Grid item xs={1.7}>
-              <MoodButton moodData={moodData} moodButtonStyle={moodButtonStyle} />
+              <MoodButton moodData={moodData} moodButtonStyle={moodButtonStyle} selectedMoodIDs={selectedMoodIDs} setSelectedMoodIDs={setSelectedMoodIDs} />
             </Grid>
           ))}
           <ResultGridItem item xs={12}>
-            <ResultButton resultButtonStyle={resultButtonStyle}> PICK MY COFFEE </ResultButton>
+            <ResultButton resultButtonStyle={resultButtonStyle} onClick={submitResult}> PICK MY COFFEE </ResultButton>
           </ResultGridItem>
         </CustomGrid>
       )}
