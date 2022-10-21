@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Canvas from './components/Canvas'
 import fetchWeatherData from './lib/useWeatherInfo'
 import MoodForm from './components/MoodForm'
-import createColorPalette from './lib/createResultButtonStyle'
+import createColorPalette from './lib/createColorPalette'
 import Result from './components/Result'
 
 function App() {
@@ -13,18 +13,28 @@ function App() {
 
   useEffect(() => {
     async function getWeatherInfo() {
-      await fetchWeatherData().then((res) => { setWeather(res.data) })
+      await fetchWeatherData().then((res) => {
+        setWeather(res.data)
+      })
     }
     getWeatherInfo()
   }, [])
 
   const temperature = weather?.main?.temp
-  const mainWeather = weather?.weather[0].main
+  const mainWeather = 'Snow'
   const weatherTheme = createColorPalette(mainWeather)
   return (
     <div>
-      { temperature && mainWeather && <Canvas temperature={temperature} mainWeather={mainWeather} /> }
-      { isResultVisible ? <Result coffee={coffee} weatherTheme={weatherTheme} /> : (
+      {temperature && mainWeather && (
+        <Canvas temperature={temperature} mainWeather={mainWeather} />
+      )}
+      {isResultVisible ? (
+        <Result
+          coffee={coffee}
+          weatherTheme={weatherTheme}
+          setIsResultVisible={setIsResultVisible}
+        />
+      ) : (
         <MoodForm
           weatherTheme={weatherTheme}
           mainWeather={mainWeather}
