@@ -40,7 +40,19 @@ function createColorPalette(mainWeather) {
     width: '20vw',
     fontWeight: 'bold',
     hoverBackground,
-    hoverColor
+    hoverColor,
+    '&:hover': {
+      backgroundColor: hoverBackground,
+      color: hoverColor
+    },
+    '&.Mui-selected': {
+      color: 'white',
+      backgroundColor: hoverBackground
+    },
+    '&.Mui-selected:hover': {
+      color: 'white',
+      backgroundColor: hoverBackground
+    }
   }
   return weatherTheme
 }
