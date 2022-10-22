@@ -24,7 +24,7 @@ function App() {
   return (
     <div>
       { temperature && mainWeather && <Canvas temperature={temperature} mainWeather={mainWeather} /> }
-      { isResultVisible ? <Result coffee={coffee} weatherTheme={weatherTheme} /> : (
+      { isResultVisible ? <Result coffee={coffee} weatherTheme={weatherTheme} setIsResultVisible={setIsResultVisible} /> : (
         <MoodForm
           weatherTheme={weatherTheme}
           mainWeather={mainWeather}
