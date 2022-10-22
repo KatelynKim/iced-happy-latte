@@ -4,6 +4,7 @@ import fetchWeatherData from './lib/useWeatherInfo'
 import MoodForm from './components/MoodForm'
 import createColorPalette from './lib/createResultButtonStyle'
 import Result from './components/Result'
+import CustomCircularProgress from './components/CustomCircularProgress'
 
 function App() {
   const [weather, setWeather] = useState()
@@ -23,7 +24,7 @@ function App() {
   const weatherTheme = createColorPalette(mainWeather)
   return (
     <div>
-      { temperature && mainWeather && <Canvas temperature={temperature} mainWeather={mainWeather} /> }
+      { temperature && mainWeather ? <Canvas temperature={temperature} mainWeather={mainWeather} /> : <CustomCircularProgress size="10vw" /> }
       { isResultVisible ? <Result coffee={coffee} weatherTheme={weatherTheme} setIsResultVisible={setIsResultVisible} /> : (
         <MoodForm
           weatherTheme={weatherTheme}

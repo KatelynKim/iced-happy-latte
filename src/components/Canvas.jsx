@@ -5,7 +5,7 @@ import createRayArray from '../lib/createRayArray'
 import drawSunCore from '../lib/drawSunCore'
 import updateBackgroundColor from '../lib/updateBackgroundColor'
 
-function Canvas({ temperature, mainWeather }) {
+function Canvas({ mainWeather }) {
   const canvasRef = useRef(null)
   const [backgroundColor, setBackgroundColor] = useState('#FFFFFF')
   const canvasWidth = window.innerWidth

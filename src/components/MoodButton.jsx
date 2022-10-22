@@ -1,7 +1,4 @@
-import React, { useState } from 'react'
-import Button from '@mui/material/Button'
-import { styled } from '@mui/material/styles'
-import ToggleButton from '@mui/material/ToggleButton'
+import React from 'react'
 import ColorButton from './ColorButton'
 
 function MoodButton({
