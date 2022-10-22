@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/iced-happy-latte/static/css/main.a75a3d6a.css",
-    "main.js": "/iced-happy-latte/static/js/main.7ecdf96c.js",
+    "main.css": "/iced-happy-latte/static/css/main.e4b2f625.css",
+    "main.js": "/iced-happy-latte/static/js/main.07f18158.js",
     "index.html": "/iced-happy-latte/index.html",
-    "main.a75a3d6a.css.map": "/iced-happy-latte/static/css/main.a75a3d6a.css.map",
-    "main.7ecdf96c.js.map": "/iced-happy-latte/static/js/main.7ecdf96c.js.map"
+    "main.e4b2f625.css.map": "/iced-happy-latte/static/css/main.e4b2f625.css.map",
+    "main.07f18158.js.map": "/iced-happy-latte/static/js/main.07f18158.js.map"
   },
   "entrypoints": [
-    "static/css/main.a75a3d6a.css",
-    "static/js/main.7ecdf96c.js"
+    "static/css/main.e4b2f625.css",
+    "static/js/main.07f18158.js"
   ]
 }
