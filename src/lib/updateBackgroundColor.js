@@ -24,7 +24,7 @@ function updateBackgroundColor(mainWeather, backgroundColor, setBackgroundColor)
       setBackgroundColor('#b8b8aa')
       break
     default:
-      setBackgroundColor('#FAEDCD')
+      setBackgroundColor('#FEFAE0')
       break
   }
   document.body.style.backgroundColor = backgroundColor

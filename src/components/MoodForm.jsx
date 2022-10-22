@@ -1,14 +1,12 @@
 import React from 'react'
 import Grid from '@mui/material/Grid'
 import { styled } from '@mui/material/styles'
-import Button from '@mui/material/Button'
 import moods from '../data/moods'
 import MoodButton from './MoodButton'
 import WeatherResultGridItem from './WeatherResultGridItem'
 import CustomGrid from './GridContainer'
 import InstructionGridItem from './InstructionGridItem'
 import recommendCoffee from '../lib/recommendCoffee'
-import CustomButton from './CustomButton'
 import ColorButton from './ColorButton'
 
 const ResultGridItem = styled(Grid)({
@@ -25,8 +23,6 @@ export default function MoodForm({
   setIsResultVisible
 }) {
   const {
-    color,
-    background,
     hoverBackground,
     hoverColor
   } = weatherTheme

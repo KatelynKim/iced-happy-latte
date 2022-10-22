@@ -1,7 +1,4 @@
 import React from 'react'
-import Grid from '@mui/material/Grid'
-import { styled } from '@mui/material/styles'
-import Button from '@mui/material/Button'
 import CustomGrid from './GridContainer'
 import InstructionGridItem from './InstructionGridItem'
 import WeatherResultGridItem from './WeatherResultGridItem'
@@ -10,10 +7,7 @@ import CustomButton from './CustomButton'
 
 function Result({ coffee, weatherTheme, setIsResultVisible }) {
   const {
-    color,
-    background,
-    hoverBackground,
-    hoverColor
+    hoverBackground
   } = weatherTheme
 
   const WeatherResultStyle = {
