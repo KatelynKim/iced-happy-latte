@@ -1,9 +1,14 @@
 import React from 'react'
+import Grid from '@mui/material/Grid'
+import { styled } from '@mui/material/styles'
+import Button from '@mui/material/Button'
 import CustomGrid from './GridContainer'
 import InstructionGridItem from './InstructionGridItem'
 import WeatherResultGridItem from './WeatherResultGridItem'
+import ResultGridItem from './ResultGridItem'
+import CustomButton from './CustomButton'
 
-function Result({ coffee, weatherTheme }) {
+function Result({ coffee, weatherTheme, setIsResultVisible }) {
   const {
     color,
     background,
@@ -19,6 +24,10 @@ function Result({ coffee, weatherTheme }) {
     fontWeight: 'bold'
   }
 
+  const onClickBackBtn = () => {
+    setIsResultVisible(false)
+  }
+
   return (
     <CustomGrid container spacing={2} rowSpacing={{ xs: 2 }}>
       <WeatherResultGridItem xs={12} theme={WeatherResultStyle}>
@@ -31,6 +40,9 @@ function Result({ coffee, weatherTheme }) {
         {' '}
         {coffee}
       </InstructionGridItem>
+      <ResultGridItem item xs={12}>
+        <CustomButton style={weatherTheme} onClick={onClickBackBtn}> Try again </CustomButton>
+      </ResultGridItem>
     </CustomGrid>
   )
 }

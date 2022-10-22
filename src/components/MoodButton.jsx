@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles'
 import ToggleButton from '@mui/material/ToggleButton'
-
-const ColorButton = styled(ToggleButton)(({ moodButtonStyle }) => moodButtonStyle)
+import ColorButton from './ColorButton'
 
 function MoodButton({
   moodData,
@@ -23,7 +22,7 @@ function MoodButton({
   }
 
   return (
-    <ColorButton key={moodData.id} id={moodData.id} moodButtonStyle={moodButtonStyle} selected={selected} onChange={handleClick}>
+    <ColorButton key={moodData.id} id={moodData.id} buttonStyle={moodButtonStyle} selected={selected} onChange={handleClick}>
       {moodData.mood}
     </ColorButton>
   )

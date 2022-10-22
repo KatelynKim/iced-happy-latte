@@ -8,12 +8,12 @@ import WeatherResultGridItem from './WeatherResultGridItem'
 import CustomGrid from './GridContainer'
 import InstructionGridItem from './InstructionGridItem'
 import recommendCoffee from '../lib/recommendCoffee'
+import CustomButton from './CustomButton'
+import ColorButton from './ColorButton'
 
 const ResultGridItem = styled(Grid)({
   textAlign: 'center'
 })
-
-const ResultButton = styled(Button)(({ resultButtonStyle }) => resultButtonStyle)
 
 export default function MoodForm({
   weatherTheme,
@@ -39,17 +39,10 @@ export default function MoodForm({
     fontWeight: 'bold'
   }
 
-  const resultButtonStyle = {
-    ...weatherTheme,
-    '&:hover': {
-      backgroundColor: hoverBackground,
-      color: hoverColor
-    }
-  }
-
   const moodButtonStyle = {
     ...weatherTheme,
     width: '8vw',
+    transition: '0.3s',
     backgroundColor: 'white',
     color: '#495057',
     '&:hover': {
@@ -64,6 +57,16 @@ export default function MoodForm({
       color: 'white',
       backgroundColor: hoverBackground
     }
+  }
+
+  const customButtonStyle = {
+    ...weatherTheme,
+    transition: '0.3s',
+    '&:hover': {
+      backgroundColor: hoverBackground,
+      color: hoverColor,
+    },
+
   }
   const submitResult = () => {
     const coffee = recommendCoffee(selectedMoodIDs, temperature)
@@ -88,7 +91,7 @@ export default function MoodForm({
             </Grid>
           ))}
           <ResultGridItem item xs={12}>
-            <ResultButton resultButtonStyle={resultButtonStyle} onClick={submitResult}> PICK MY COFFEE </ResultButton>
+            <ColorButton buttonStyle={customButtonStyle} onClick={submitResult}> PICK MY COFFEE </ColorButton>
           </ResultGridItem>
         </CustomGrid>
       )}
