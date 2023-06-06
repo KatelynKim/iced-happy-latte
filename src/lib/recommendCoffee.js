@@ -10,7 +10,6 @@ function recommendCoffee(selectedMoodIDs, temperature) {
   const totalScoresArray = getTotalScoresArr(selectedMoodIDs)
   const indexesCoffeesWithMaxScores = getCoffeeIDsWithMaxScore(totalScoresArray)
   const recommendedCoffee = tempPrefix + randomlySelectOneCoffeeWithMaxScore(indexesCoffeesWithMaxScores)
-  console.log('RESULTING COFFEE :', recommendedCoffee)
   return recommendedCoffee
 }
 export default recommendCoffee
