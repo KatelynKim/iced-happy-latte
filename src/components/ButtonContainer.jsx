@@ -43,7 +43,7 @@ const StyledIconButton = styled(IconButton)(({ theme }) => ({
 
 function ButtonContainer({ weatherTheme }) {
   return (
-    <StyledButtonContainer theme={{ ...buttonContainerTheme }} direction="row" justifyContent="center" spacing={2}>
+    <StyledButtonContainer theme={buttonContainerTheme} direction="row" justifyContent="center" spacing={2}>
       <StyledIconButton theme={weatherTheme}>
         <AcUnitIcon />
       </StyledIconButton>

@@ -1,4 +1,4 @@
 import { styled, ToggleButton } from '@mui/material'
 
-const ColorButton = styled(ToggleButton)(({ buttonStyle }) => buttonStyle)
+const ColorButton = styled(ToggleButton)(({ theme }) => theme)
 export default ColorButton

@@ -19,7 +19,7 @@ function MoodButton({
   }
 
   return (
-    <ColorButton key={moodData.id} id={moodData.id} buttonStyle={moodButtonStyle} selected={selected} onChange={handleClick}>
+    <ColorButton value={moodData.id} key={moodData.id} id={moodData.id} theme={moodButtonStyle} selected={selected} onChange={handleClick}>
       {moodData.mood}
     </ColorButton>
   )

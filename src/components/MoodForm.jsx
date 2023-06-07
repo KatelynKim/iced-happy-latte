@@ -61,8 +61,7 @@ export default function MoodForm({
     '&:hover': {
       backgroundColor: hoverBackground,
       color: hoverColor,
-    },
-
+    }
   }
   const submitResult = () => {
     const coffee = recommendCoffee(selectedMoodIDs, temperature)
@@ -82,12 +81,12 @@ export default function MoodForm({
             How are you feeling today? Select all that apply and we&apos;ll pick the right coffee for you!
           </InstructionGridItem>
           {moods.map((moodData) => (
-            <Grid item xs={1.7}>
+            <Grid item xs={1.7} key={moodData.id}>
               <MoodButton moodData={moodData} moodButtonStyle={moodButtonStyle} selectedMoodIDs={selectedMoodIDs} setSelectedMoodIDs={setSelectedMoodIDs} />
             </Grid>
           ))}
           <ResultGridItem item xs={12}>
-            <ColorButton buttonStyle={customButtonStyle} onClick={submitResult}> PICK MY COFFEE </ColorButton>
+            <ColorButton theme={customButtonStyle} value="result" onClick={submitResult}> PICK MY COFFEE </ColorButton>
           </ResultGridItem>
         </CustomGrid>
       )}

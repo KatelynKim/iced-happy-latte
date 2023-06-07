@@ -26,7 +26,6 @@ class Smoke {
       this.y = Math.random() * window.innerHeight
     }
     if (this.y + this.lineWidth / 2 < 0) {
-      console.log(this.y)
       this.y = window.innerHeight + this.lineWidth / 2
     }
 

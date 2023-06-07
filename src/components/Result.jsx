@@ -24,7 +24,7 @@ function Result({ coffee, weatherTheme, setIsResultVisible }) {
 
   return (
     <CustomGrid container spacing={2} rowSpacing={{ xs: 2 }}>
-      <WeatherResultGridItem xs={12} theme={WeatherResultStyle}>
+      <WeatherResultGridItem item xs={12} theme={WeatherResultStyle}>
         Today&apos;s coffee is
         {' '}
         {coffee}
