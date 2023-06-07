@@ -18,7 +18,6 @@ function Canvas({ mainWeather }) {
     const context = canvas.getContext('2d')
 
     updateBackgroundColor(mainWeather, backgroundColor, setBackgroundColor)
-
     let particleArray
     let rayArray
     if (mainWeather !== Weathers.CLEAR) {
