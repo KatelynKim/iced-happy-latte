@@ -41,52 +41,52 @@ const StyledIconButton = styled(IconButton)(({ theme }) => ({
   }
 }))
 
-function ButtonContainer({ weatherTheme }) {
+function ButtonContainer({ weatherTheme, setCurrentWeather }) {
   return (
     <StyledButtonContainer theme={buttonContainerTheme} direction="row" justifyContent="center" spacing={2}>
-      <StyledIconButton theme={weatherTheme}>
+      <StyledIconButton theme={weatherTheme} onClick={() => setCurrentWeather('Snow')}>
         <AcUnitIcon />
       </StyledIconButton>
-      <StyledIconButton theme={weatherTheme}>
+      <StyledIconButton theme={weatherTheme} onClick={() => setCurrentWeather('Rain')}>
         <UmbrellaIcon />
       </StyledIconButton>
-      <StyledIconButton theme={weatherTheme}>
+      <StyledIconButton theme={weatherTheme} onClick={() => setCurrentWeather('Drizzle')}>
         <WaterDropIcon />
       </StyledIconButton>
-      <StyledIconButton theme={weatherTheme}>
+      <StyledIconButton theme={weatherTheme} onClick={() => setCurrentWeather('Clear')}>
         <WbSunnyIcon />
       </StyledIconButton>
-      <StyledIconButton theme={weatherTheme}>
+      <StyledIconButton theme={weatherTheme} onClick={() => setCurrentWeather('Clouds')}>
         <CloudIcon />
       </StyledIconButton>
-      <StyledIconButton theme={weatherTheme}>
+      <StyledIconButton theme={weatherTheme} onClick={() => setCurrentWeather('Thunderstorm')}>
         <ThunderstormIcon />
       </StyledIconButton>
-      <StyledIconButton theme={weatherTheme}>
+      <StyledIconButton theme={weatherTheme} onClick={() => setCurrentWeather('Haze')}>
         <AirIcon />
       </StyledIconButton>
-      <StyledIconButton theme={weatherTheme}>
+      <StyledIconButton theme={weatherTheme} onClick={() => setCurrentWeather('Tornado')}>
         <TornadoIcon />
       </StyledIconButton>
-      <StyledIconButton theme={weatherTheme}>
+      <StyledIconButton theme={weatherTheme} onClick={() => setCurrentWeather('Sand')}>
         <GrainIcon />
       </StyledIconButton>
-      <StyledIconButton theme={weatherTheme}>
+      <StyledIconButton theme={weatherTheme} onClick={() => setCurrentWeather('Smoke')}>
+        <MasksIcon />
+      </StyledIconButton>
+      <StyledIconButton theme={weatherTheme} onClick={() => setCurrentWeather('Dust')}>
+        <GrainIcon />
+      </StyledIconButton>
+      <StyledIconButton theme={weatherTheme} onClick={() => setCurrentWeather('Ash')}>
         <VolcanoIcon />
       </StyledIconButton>
-      <StyledIconButton theme={weatherTheme}>
-        <UmbrellaIcon />
-      </StyledIconButton>
-      <StyledIconButton theme={weatherTheme}>
-        <UmbrellaIcon />
-      </StyledIconButton>
-      <StyledIconButton theme={weatherTheme}>
+      <StyledIconButton theme={weatherTheme} onClick={() => setCurrentWeather('Fog')}>
         <WaterIcon />
       </StyledIconButton>
-      <StyledIconButton theme={weatherTheme}>
+      <StyledIconButton theme={weatherTheme} onClick={() => setCurrentWeather('Mist')}>
         <WavesIcon />
       </StyledIconButton>
-      <StyledIconButton theme={weatherTheme}>
+      <StyledIconButton theme={weatherTheme} onClick={() => setCurrentWeather('Squall')}>
         <MasksIcon />
       </StyledIconButton>
     </StyledButtonContainer>

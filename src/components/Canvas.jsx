@@ -41,7 +41,7 @@ function Canvas({ mainWeather }) {
       requestAnimationFrame(animate)
     }
     animate()
-  }, [backgroundColor])
+  }, [backgroundColor, mainWeather])
 
   return <canvas ref={canvasRef} />
 }
