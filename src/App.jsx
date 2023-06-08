@@ -6,6 +6,9 @@ import createColorPalette from './lib/createResultButtonStyle'
 import Result from './components/Result'
 import CustomCircularProgress from './components/CustomCircularProgress'
 import ButtonContainer from './components/ButtonContainer'
+import Thermometer from './components/Thermometer'
+import convertKelvinToCelcius from './lib/helpers/convertKelvinToCelcius'
+import Weathers from './lib/constants/weathers'
 
 function App() {
   const [selectedMoodIDs, setSelectedMoodIDs] = useState([])
@@ -17,16 +20,18 @@ function App() {
   useEffect(() => {
     async function getWeatherInfo() {
       await fetchWeatherData().then((res) => {
-        setCurrentWeather(res?.data?.weather[0].main)
-        setTemperature(res?.data?.main?.temp)
+        setCurrentWeather(Weathers[res?.data?.weather[0].main.toUpperCase()])
+        if (res?.data?.main?.temp !== undefined) {
+          setTemperature(convertKelvinToCelcius(res?.data?.main?.temp))
+        }
       })
     }
     getWeatherInfo()
   }, [])
-
   const weatherTheme = createColorPalette(mainWeather)
   return (
-    <div>
+    <>
+      { temperature && <Thermometer temperature={temperature} weatherTheme={weatherTheme} />}
       <ButtonContainer weatherTheme={weatherTheme} setCurrentWeather={setCurrentWeather} />
       { temperature && mainWeather ? <Canvas temperature={temperature} mainWeather={mainWeather} /> : <CustomCircularProgress size="10vw" /> }
       { isResultVisible ? <Result coffee={coffee} weatherTheme={weatherTheme} setIsResultVisible={setIsResultVisible} /> : (
@@ -40,7 +45,7 @@ function App() {
           setIsResultVisible={setIsResultVisible}
         />
       )}
-    </div>
+    </>
   )
 }
 

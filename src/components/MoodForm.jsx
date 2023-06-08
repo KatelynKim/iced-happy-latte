@@ -8,6 +8,7 @@ import CustomGrid from './GridContainer'
 import InstructionGridItem from './InstructionGridItem'
 import recommendCoffee from '../lib/recommendCoffee'
 import ColorButton from './ColorButton'
+import convertWeatherToAdjective from '../lib/helpers/convertWeatherToAdjective'
 
 const ResultGridItem = styled(Grid)({
   textAlign: 'center'
@@ -73,12 +74,14 @@ export default function MoodForm({
       {mainWeather && (
         <CustomGrid container spacing={2} rowSpacing={{ xs: 2 }}>
           <WeatherResultGridItem item xs={12} theme={WeatherResultStyle}>
-            Today&apos;s weather is
+            On this
             {' '}
-            {mainWeather.toUpperCase()}
+            {convertWeatherToAdjective(mainWeather)}
+            {' '}
+            day, I&apos;m feeling a bit...
           </WeatherResultGridItem>
           <InstructionGridItem item xs={12}>
-            How are you feeling today? Select all that apply and we&apos;ll pick the right coffee for you!
+            Select all that apply!
           </InstructionGridItem>
           {moods.map((moodData) => (
             <Grid item xs={1.7} key={moodData.id}>

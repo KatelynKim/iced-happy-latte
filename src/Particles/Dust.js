@@ -1,6 +1,6 @@
 import generateRandIntInRange from '../lib/generateRandIntInRange'
 
-class Ash {
+class Dust {
   constructor(ctx) {
     this.x = Math.random() * window.innerWidth
     this.y = Math.random() * window.innerHeight
@@ -31,4 +31,4 @@ class Ash {
   }
 }
 
-export default Ash
+export default Dust

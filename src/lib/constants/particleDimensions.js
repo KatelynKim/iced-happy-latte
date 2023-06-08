@@ -1,4 +1,4 @@
-const sunCoreX = window.innerWidth - 150
+const sunCoreX = 150
 const sunCoreY = 30
 const sunCoreRadius = 250
 const rayLength = 800

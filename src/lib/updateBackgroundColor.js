@@ -11,7 +11,7 @@ function updateBackgroundColor(mainWeather, backgroundColor, setBackgroundColor)
     case Weathers.CLEAR:
       setBackgroundColor('#F1EAE6')
       break
-    case Weathers.CLOUDY:
+    case Weathers.CLOUDS:
       setBackgroundColor('#E4E4E2')
       break
     case Weathers.FOG:

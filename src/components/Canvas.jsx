@@ -25,7 +25,6 @@ function Canvas({ mainWeather }) {
     } else {
       rayArray = createRayArray(context)
     }
-
     function animate() {
       if (mainWeather === Weathers.CLEAR) {
         drawSunCore(context)

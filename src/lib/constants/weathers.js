@@ -2,7 +2,7 @@ const Weathers = {
   SNOW: 'Snow',
   RAIN: 'Rain',
   CLEAR: 'Clear',
-  CLOUDY: 'Clouds',
+  CLOUDS: 'Clouds',
   THUNDERSTORM: 'Thunderstorm',
   SQUALL: 'Squall',
   TORNADO: 'Tornado',
@@ -11,9 +11,9 @@ const Weathers = {
   HAZE: 'Haze',
   DUST: 'Dust',
   FOG: 'Fog',
-  SAND: 'Sand',
-  ASH: 'Ash',
-  DRIZZLE: 'Drizzle'
+  SAND: 'Dust',
+  ASH: 'Dust',
+  DRIZZLE: 'Rain'
 }
 
 export default Weathers

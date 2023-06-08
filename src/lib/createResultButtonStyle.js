@@ -6,7 +6,7 @@ function createColorPalette(mainWeather) {
   const hoverColor = '#FFFFFF'
   let hoverBackground
   switch (mainWeather) {
-    case Weathers.CLOUDY:
+    case Weathers.CLOUDS:
       background = '#BABAAA'
       hoverBackground = '#67671C'
       break
@@ -22,7 +22,7 @@ function createColorPalette(mainWeather) {
       background = '#5c677d'
       hoverBackground = '#33415c'
       break
-    case Weathers.ASH:
+    case Weathers.DUST:
       background = '#6f5e53'
       hoverBackground = '#593d3b'
       break
